@@ -1,0 +1,54 @@
+{% extends 'crm/base.html'%}
+
+{% block content %}
+
+<section>
+    <div class="container-fluid">
+      <div class="row mb-5">
+        <div class="col-xl-10 col-lg-9 col-md-8 ml-auto mt-5">
+          <div class="card card-body">
+            <form action="" method="get">
+              {{myFilter.form}}
+              <button class="btn btn-primary" type="submit">Search</button>
+            </form>
+          </div>
+          <div class="row align-items-center">
+            <div class="col mt-3 mr-3">
+              
+              <h3 class="text-muted text-center mb-3">Customer: {{customer.name}}</h3>
+              <table class="table center table-striped bg-light text-center">
+                <thead>
+                  <tr class="text-muted">
+                    <th>Product</th>
+                    <th>Delivery place</th>
+                    <th>Total Ream</th>
+                    <th>Total Money</th>
+                    <th>Date Ordered</th>
+                    <th>Update</th>
+					          <th>Remove</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  {%  for order in orders %}
+                    <tr>
+                      <td>{{order.product}}</td>
+                      <td>{{order.delivery_place}}</td>
+                      <td>{{order.total_ream}}</td>
+                      <td>{{order.total_money}}</td>
+                      <td>{{order.date_created}}</td>
+                      <td><a class="btn btn-info" href="{% url 'update_order' order.id %}">Update</a></td>
+                      <td><a class="btn btn-danger" href="{% url 'delete_order' order.id %}">Delete</a></td>
+                    </tr>
+                  {% endfor %}
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+{% endblock %}

@@ -1,0 +1,350 @@
+{% extends 'crm/base.html'%}
+
+{% block content %}
+
+  <!-- ACTIONS -->
+
+  <section>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
+          <div class="row justify-content-center align-items-center pt-md-5 mt-md-3 mb-3">
+            <div class="col-xl-3 col-sm-6 pt-2 my-auto">
+              <a href="#" class="btn btn-block card-common text-secondary" data-toggle="modal"
+                data-target="#addPostModal">
+                <i class="fas fa-plus"></i> Add Post
+              </a>
+            </div>
+            <div class="col-xl-3 col-sm-6 p-2">
+              <a href="#" class="btn btn-block card-common text-secondary" data-toggle="modal"
+                data-target="#addCategoryModal">
+                <i class="fas fa-plus"></i> Add Category
+              </a>
+            </div>
+            <div class="col-xl-3 col-sm-6 p-2">
+              <a href="#" class="btn btn-block card-common text-secondary" data-toggle="modal"
+                data-target="#addUserModal">
+                <i class="fas fa-plus"></i> Add User
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end of action -->
+
+
+  <!-- cards -->
+  <section>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
+          <div class="row">
+            <div class="col-xl-3 col-sm-6 p-2">
+              <div class="card card-common">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between">
+                    <i class="fas fa-shopping-cart fa-3x text-secondary"></i>
+                    <div class="text-right text-secondary">
+                      <h5>Sales</h5>
+                      <h3>$135,000</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-secondary">
+                  <i class="fas fa-sync mr-3"></i>
+                  <span>Updated Now</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 p-2">
+              <div class="card card-common">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between">
+                    <i class="fas fa-money-bill-alt fa-3x text-secondary"></i>
+                    <div class="text-right text-secondary">
+                      <h5>Expenses</h5>
+                      <h3>$39,000</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-secondary">
+                  <i class="fas fa-sync mr-3"></i>
+                  <span>Updated Now</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 p-2">
+              <div class="card card-common">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between">
+                    <i class="fas fa-users fa-3x text-secondary"></i>
+                    <div class="text-right text-secondary">
+                      <h5>Users</h5>
+                      <h3>15,000</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-secondary">
+                  <i class="fas fa-sync mr-3"></i>
+                  <span>Updated Now</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 p-2">
+              <div class="card card-common">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between">
+                    <i class="fas fa-chart-line fa-3x text-secondary"></i>
+                    <div class="text-right text-secondary">
+                      <h5>Visitors</h5>
+                      <h3>45,000</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-secondary">
+                  <i class="fas fa-sync mr-3"></i>
+                  <span>Updated Now</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 p-2">
+              <div class="card card-common">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between">
+                    <i class="fas fa-shopping-cart fa-3x text-secondary"></i>
+                    <div class="text-right text-secondary">
+                      <h5>Sales</h5>
+                      <h3>$135,000</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-secondary">
+                  <i class="fas fa-sync mr-3"></i>
+                  <span>Updated Now</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 p-2">
+              <div class="card card-common">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between">
+                    <i class="fas fa-money-bill-alt fa-3x text-secondary"></i>
+                    <div class="text-right text-secondary">
+                      <h5>Expenses</h5>
+                      <h3>$39,000</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-secondary">
+                  <i class="fas fa-sync mr-3"></i>
+                  <span>Updated Now</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 p-2">
+              <div class="card card-common">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between">
+                    <i class="fas fa-users fa-3x text-secondary"></i>
+                    <div class="text-right text-secondary">
+                      <h5>Users</h5>
+                      <h3>15,000</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-secondary">
+                  <i class="fas fa-sync mr-3"></i>
+                  <span>Updated Now</span>
+                </div>
+              </div>
+            </div>
+            <div class="col-xl-3 col-sm-6 p-2">
+              <div class="card card-common">
+                <div class="card-body">
+                  <div class="d-flex justify-content-between">
+                    <i class="fas fa-chart-line fa-3x text-secondary"></i>
+                    <div class="text-right text-secondary">
+                      <h5>Visitors</h5>
+                      <h3>45,000</h3>
+                    </div>
+                  </div>
+                </div>
+                <div class="card-footer text-secondary">
+                  <i class="fas fa-sync mr-3"></i>
+                  <span>Updated Now</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end of cards -->
+
+
+  <!-- tables -->
+  <section>
+    <div class="container-fluid">
+      <div class="row mb-5">
+        <div class="col-xl-10 col-lg-9 col-md-8 ml-auto">
+          <div class="row align-items-center">
+            <div class="col-xl-6 col-12 mb-4 mb-xl-0">
+              <h3 class="text-muted text-center mb-3">Orders</h3>
+              <table class="table table-striped bg-light text-center">
+                <thead>
+                  <tr class="text-muted">
+                    <th>Customer</th>
+                    <th>Product</th>
+                    <th>Delivery Place</th>
+                    <th>Total ream</th>
+                    <th>Total money</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {%  for i in orders %}
+                  <tr>
+                    <td>{{i.customer}}</td>
+                    <td>{{i.product}}</td>
+                    <td>{{i.delivery_place}}</td>
+                    <td>{{i.total_ream}}</td>
+                    <td>{{i.total_money}}</td>
+                  </tr>
+                {% endfor %}
+                </tbody>
+              </table>
+
+              <!-- pagination -->
+              <nav>
+                <ul class="pagination justify-content-center">
+                  <li class="page-item">
+                    <a href="#" class="page-link py-2 px-3">
+                      <span>&laquo;</span>
+                    </a>
+                  </li>
+                  <li class="page-item active">
+                    <a href="#" class="page-link py-2 px-3">
+                      1
+                    </a>
+                  </li>
+                  <li class="page-item">
+                    <a href="#" class="page-link py-2 px-3">
+                      2
+                    </a>
+                  </li>
+                  <li class="page-item">
+                    <a href="#" class="page-link py-2 px-3">
+                      3
+                    </a>
+                  </li>
+                  <li class="page-item">
+                    <a href="#" class="page-link py-2 px-3">
+                      <span>&raquo;</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <!-- end of pagination -->
+
+            </div>
+            <div class="col-xl-6 col-12">
+              <h3 class="text-muted text-center mb-3">Recent Payments</h3>
+              <table class="table table-dark table-hover text-center">
+                <thead>
+                  <tr class="text-muted">
+                    <th>#</th>
+                    <th>Name</th>
+                    <th>Price</th>
+                    <th>Date</th>
+                    <th>Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>1</th>
+                    <td>Monica</td>
+                    <td>$2000</td>
+                    <td>25/05/2018</td>
+                    <td><span class="badge badge-success w-75 py-2">Approved</span></td>
+                  </tr>
+                  <tr>
+                    <th>2</th>
+                    <td>Nick</td>
+                    <td>$2000</td>
+                    <td>25/05/2018</td>
+                    <td><span class="badge badge-success w-75 py-2">Approved</span></td>
+                  </tr>
+                  <tr>
+                    <th>3</th>
+                    <td>Alex</td>
+                    <td>$2000</td>
+                    <td>25/05/2018</td>
+                    <td><span class="badge badge-danger w-75 py-2">Pending</span></td>
+                  </tr>
+                  <tr>
+                    <th>4</th>
+                    <td>Jane</td>
+                    <td>$2000</td>
+                    <td>25/05/2018</td>
+                    <td><span class="badge badge-danger w-75 py-2">Pending</span></td>
+                  </tr>
+                  <tr>
+                    <th>5</th>
+                    <td>Michael</td>
+                    <td>$2000</td>
+                    <td>25/05/2018</td>
+                    <td><span class="badge badge-success w-75 py-2">Approved</span></td>
+                  </tr>
+                  <tr>
+                    <th>6</th>
+                    <td>Kate</td>
+                    <td>$2000</td>
+                    <td>25/05/2018</td>
+                    <td><span class="badge badge-danger w-75 py-2">Pending</span></td>
+                  </tr>
+                </tbody>
+              </table>
+              <!-- pagination -->
+              <nav>
+                <ul class="pagination justify-content-center">
+                  <li class="page-item">
+                    <a href="#" class="page-link py-2 px-3">
+                      <span>Previous</span>
+                    </a>
+                  </li>
+                  <li class="page-item active">
+                    <a href="#" class="page-link py-2 px-3">
+                      1
+                    </a>
+                  </li>
+                  <li class="page-item">
+                    <a href="#" class="page-link py-2 px-3">
+                      2
+                    </a>
+                  </li>
+                  <li class="page-item">
+                    <a href="#" class="page-link py-2 px-3">
+                      3
+                    </a>
+                  </li>
+                  <li class="page-item">
+                    <a href="#" class="page-link py-2 px-3">
+                      <span>Next</span>
+                    </a>
+                  </li>
+                </ul>
+              </nav>
+              <!-- end of pagination -->
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- end of tables -->
+
+
+{% endblock %}

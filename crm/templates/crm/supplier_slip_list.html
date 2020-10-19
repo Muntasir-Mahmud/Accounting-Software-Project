@@ -1,0 +1,49 @@
+{% extends 'crm/base.html'%}
+
+{% block content %}
+
+<section>
+    <div class="container-fluid">
+      <div class="row mb-5">
+        <div class="col-xl-10 col-lg-9 col-md-8 ml-auto mt-5">
+          
+          <div class="row align-items-center">
+            <div class="col mt-3 mr-3">
+              
+              <h3 class="text-muted text-center mb-3">Supplier Slip</h3>
+              <table class="table table-striped bg-light text-center">
+                <thead>
+                    <tr class="text-muted">
+                      <th>Supplier</th>
+                      <th>Product</th>
+                      <th>Delivery Place</th>
+                      <th>Total ream</th>
+                      <th>Total money</th>
+                      <th>Date</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {%  for item in supplier_slip_list %}
+                    <tr>
+                      <td>{{item.supplier}}</td>
+                      <td>{{item.product}}</td>
+                      <td>{{item.delivery_place}}</td>
+                      <td>{{item.total_ream}}</td>
+                      <td>{{item.total_money}}</td>
+                      <td>{{item.date_created}}</td>
+                      <td><a class="btn btn-info" href="{% url 'update_supplier_slip' item.id %}">Update</a></td>
+                      <td><a class="btn btn-danger" href="{% url 'delete_supplier_slip' item.id %}">Delete</a></td>
+                    </tr>
+                  {% endfor %}
+                  </tbody>
+              </table>
+              <a href="{% url 'create_supplier_slip' %}" class="btn btn-success"> Add Supplier Slip</a>
+
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+{% endblock %}

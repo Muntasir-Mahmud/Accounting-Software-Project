@@ -1,0 +1,43 @@
+{% extends 'crm/base.html'%}
+
+{% block content %}
+
+<section>
+    <div class="container-fluid">
+      <div class="row mb-5">
+        <div class="col-xl-10 col-lg-9 col-md-8 ml-auto mt-5">
+          <div class="row align-items-center">
+            <div class="col mt-3 mr-3">
+              <h3 class="text-muted text-center mb-3">Customers</h3>
+              <table class="table table-striped bg-light text-center">
+                <thead>
+                  <tr class="text-muted">
+                    <th>Name</th>
+                    <th>Phone no.</th>
+                    <th>Address</th>
+                    <th>Date</th>
+                    <th></th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  {%  for customer in customers %}
+                    <tr>
+                      <td>{{customer.name}}</td>
+                      <td>{{customer.phone}}</td>
+                      <td>{{customer.address}}</td>
+                      <td>{{customer.date_created}}</td>
+                      <td><a href="{% url 'customer_detail' customer.id %}" class="btn btn-sm btn-info">View</a></td>
+                    </tr>
+                  {% endfor %}
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+{% endblock %}

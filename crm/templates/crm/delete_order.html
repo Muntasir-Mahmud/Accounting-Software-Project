@@ -1,0 +1,26 @@
+{% extends 'crm/base.html'%}
+{% load static %}
+
+{% block content %}
+
+<section>
+    <div class="container-fluid">
+      <div class="row mb-5">
+        <div class="col-xl-10 col-lg-9 col-md-8 ml-auto mt-5">
+          <div class="row align-items-center">
+            <div class="col-xl-6 col-12 mb-4 mb-xl-0">
+                <p>Are you sure ,you want to delete "{{ item }}"</p>
+                <form method="POST" action="{% url 'delete_order' item.id %}">
+                    
+                    {% csrf_token %}
+                    <a href="{% url 'orders' %}" class="btn btn-danger">Cancel</a>
+
+                    <input type="submit" class="btn btn-primary" name="Confirm">
+                </form>    
+
+            </div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}

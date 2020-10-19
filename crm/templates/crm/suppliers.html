@@ -1,0 +1,41 @@
+{% extends 'crm/base.html'%}
+
+{% block content %}
+
+<section>
+    <div class="container-fluid">
+      <div class="row mb-5">
+        <div class="col-xl-10 col-lg-9 col-md-8 ml-auto mt-5">
+          <div class="row align-items-center">
+            <div class="col mt-3 mr-3">
+              <h3 class="text-muted text-center mb-3">Suppliers</h3>
+              <table class="table table-striped bg-light text-center">
+                <thead>
+                  <tr class="text-muted">
+                    <th>Name</th>
+                    <th>Phone no.</th>
+                    <th>Address</th>
+                    <th>Date</th>
+                  </tr>
+                </thead>
+                <tbody>
+
+                  {%  for supplier in suppliers %}
+                    <tr>
+                      <td>{{supplier.name}}</td>
+                      <td>{{supplier.phone}}</td>
+                      <td>{{supplier.address}}</td>
+                      <td>{{supplier.date_created}}</td>
+                    </tr>
+                  {% endfor %}
+
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+</section>
+
+{% endblock %}
