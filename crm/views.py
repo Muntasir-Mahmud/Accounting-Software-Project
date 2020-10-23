@@ -159,8 +159,13 @@ def stocks(request):
     return render(request, 'crm/stock.html', {'stock' : stock})
 
 
-#def stock_detail(request):
+def stock_detail(request):
+    orders = Order.objects.all()
+    supplier_slip_list = Supplier_slip.objects.all()
 
+    context = {'orders': orders, 'supplier_slip_list': supplier_slip_list}
+
+    return render(request, 'crm/stock_detail.html', context)
 
 
 

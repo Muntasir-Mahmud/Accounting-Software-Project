@@ -8,7 +8,7 @@ urlpatterns = [
 
     #stock
     path('product_stocks/', views.stocks, name="stocks"),
-    #path('stock_detail/', view.stock_detail, name="stock_detail"),
+    path('stock_detail/', views.stock_detail, name="stock_detail"),
 
     #customer
     path('customers/', views.customers, name="customers"),
