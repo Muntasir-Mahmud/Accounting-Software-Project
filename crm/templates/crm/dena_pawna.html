@@ -1,0 +1,34 @@
+{% extends 'crm/base.html'%} {% block content %}
+
+<section>
+  <div class="container-fluid">
+    <div class="row mb-5">
+      <div class="col-xl-10 col-lg-9 col-md-8 ml-auto mt-5">
+        <div class="row align-items-center">
+          <div class="col mt-3 mr-3">
+            <h3 class="text-muted text-center mb-3">Stocks</h3>
+            <table class="table table-striped bg-light text-center">
+              <thead>
+                <tr class="text-muted">
+                  <th>Product name</th>
+                  <th>Total quantity</th>
+                  <th></th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for item in customer_dena %}
+                <tr>
+                  <td>{{item.customer.name}}</td>
+                  <td>{{item.amount}}</td>
+                </tr>
+                {% endfor %}
+              </tbody>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+{% endblock %}

@@ -1,5 +1,6 @@
 from django.shortcuts import render, redirect
-from . models import  Customer, Order, Product, Product_stock, Customer_debit, Supplier, Supplier_slip, Supplier_credit
+from . models import  Customer, Order, Product, Product_stock,\
+                        Customer_dena, Supplier, Supplier_slip, Supplier_pawna
 from . forms  import OrderForm, Supplier_slipForm
 from . filters import OrderFilter, CustomerFilter
 
@@ -57,10 +58,18 @@ def createOrder(request):
             product_stock.quantity -= form.cleaned_data['total_ream']
             print(product_stock.quantity)
             product_stock.save()
+            customer = form.cleaned_data['customer']
+            customer_dena = Customer_dena.objects.get(customer=customer)
+            if customer_dena.amount:
+                customer_dena.amount += form.cleaned_data['debit_amount']
+            else:
+                customer_dena.amount = form.cleaned_data['debit_amount']
+            print(customer_dena.amount)
+            customer_dena.save()
             return redirect('/orders/')
 
     context = {'form': form}
-    return render(request,'crm/order_form.html', context)
+    return render(request, 'crm/order_form.html', context)
 
 
 def updateOrder(request, pk):
@@ -87,7 +96,7 @@ def deleteOrder(request, pk):
         return redirect('/orders/')
 
     context = {'item': order}
-    return render(request,'crm/delete.html',context)
+    return render(request,'crm/delete_order.html',context)
 
 
 def suppliers(request):
@@ -149,11 +158,10 @@ def deleteSupplier_slip(request, pk):
         return redirect('/supplier_slip_list/')
 
     context = {'item': supplier_slip}
-    return render(request,'crm/delete_supplier_slip.html',context)
+    return render(request, 'crm/delete_supplier_slip.html',context)
 
 
 def stocks(request):
-
     stock = Product_stock.objects.all()
 
     return render(request, 'crm/stock.html', {'stock' : stock})
@@ -168,10 +176,7 @@ def stock_detail(request):
     return render(request, 'crm/stock_detail.html', context)
 
 
+def dena_Pawna(request):
+    customer_dena = Customer_dena.objects.all()
 
-
-
-
-
-
-
+    return render(request, 'crm/dena_pawna.html', {'customer_dena':customer_dena})

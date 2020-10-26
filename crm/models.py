@@ -1,6 +1,5 @@
 from django.db import models
 
-# Create your models here.
 
 class Product(models.Model):
     name = models.CharField(max_length=200, null=True)
@@ -14,7 +13,7 @@ class Product(models.Model):
 
 
 class Product_stock(models.Model):
-    product = models.ForeignKey(Product, null= True, on_delete= models.SET_NULL)
+    product = models.ForeignKey(Product, null=True, on_delete=models.SET_NULL)
     quantity = models.IntegerField(null=True)
     previous_quantity = models.IntegerField(null=True)
     date_created = models.DateTimeField(auto_now_add=True, null=True)
@@ -40,10 +39,9 @@ class Order(models.Model):
     date_created = models.DateTimeField(auto_now_add=True, null=True)
 
 
-class Customer_debit(models.Model):
+class Customer_dena(models.Model):
     customer = models.ForeignKey(Customer, null= True, on_delete= models.SET_NULL)
-    Amount = models.IntegerField(null=True)
-    Paid_amount = models.IntegerField(null=True, blank=True)
+    amount = models.IntegerField(null=True)
 
 
 class Supplier(models.Model):
@@ -66,7 +64,6 @@ class Supplier_slip(models.Model):
     date_created = models.DateTimeField(auto_now_add=True, null=True)
 
 
-class Supplier_credit(models.Model):
+class Supplier_pawna(models.Model):
     supplier = models.ForeignKey(Supplier, null= True, on_delete= models.SET_NULL)
     Amount = models.IntegerField(null=True)
-    Paid_amount = models.IntegerField(null=True, blank=True)
